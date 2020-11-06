@@ -1,0 +1,5 @@
+gmshToFoam *.msh > OutputGMSHing
+checkMesh > OutputCheckMesh
+laplacianFoam > OutputLogFile
+postProcess -func 'patchIntegrate(name=Bottom,gradTz)' -latestTime |grep 'areaIntegrate(Bottom)'
+
